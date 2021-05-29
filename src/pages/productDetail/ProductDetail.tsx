@@ -1,12 +1,9 @@
 import React from 'react';
-
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
-import '../products/products.css';
 import {useLocation, useHistory} from "react-router-dom";
 import {ProductInterface, editProduct} from "../products/productsSlice";
 import {useAppDispatch} from "../../app/hooks";
-
 
 
 export function ProductDetail() {
@@ -38,9 +35,10 @@ export function ProductDetail() {
     dispatch(editProduct(values));
     history.push('/');
   }
+
   return (
     <div>
-      <h2 className="movie-title">Edit Product "{product.product_name}"</h2>
+      <h2 className="product-title">Edit Product "{product.product_name}"</h2>
       <Formik
         initialValues={product}
         validationSchema={validation}
@@ -51,36 +49,51 @@ export function ProductDetail() {
             <Form className='form-section'>
               <div>
                 <p>Product Name</p>
-                <Field className='inputs' name='product_name' type='text'
-                       placeholder='Product Name'/>
-                <ErrorMessage className={"error"}
-                              name='product_name'
-                              component='div'/>
+                <Field
+                  className='inputs' name='product_name' type='text'
+                  placeholder='Product Name'/>
+                <ErrorMessage
+                  className={"error"}
+                  name='product_name'
+                  component='div'/>
               </div>
+
               <div>
                 <p>Weight</p>
-                <Field className='inputs' name='weight' type='text'
-                       placeholder='Weight'/>
-                <ErrorMessage className={"error"}
-                              name='weight'
-                              component='div'/>
+                <Field
+                  className='inputs' name='weight' type='text'
+                  placeholder='Weight'/>
+                <ErrorMessage
+                  className={"error"}
+                  name='weight'
+                  component='div'/>
               </div>
+
               <div>
                 <p>Availability</p>
-                <Field className='inputs' name='availability' type='number'
-                       placeholder='Availability'/>
-                <ErrorMessage className={"error"}
-                              name='availability'
-                              component='div'/>
+                <Field
+                  className='inputs'
+                  name='availability'
+                  type='number'
+                  placeholder='Availability'/>
+                <ErrorMessage
+                  className={"error"}
+                  name='availability'
+                  component='div'/>
               </div>
+
               <div>
                 <p>Product Url</p>
-                <Field className='inputs' name='url' type='text'
-                       placeholder='Product Url'/>
-                <ErrorMessage className={"error"}
-                              name='url'
-                              component='div'/>
+                <Field
+                  className='inputs'
+                  name='url' type='text'
+                  placeholder='Product Url'/>
+                <ErrorMessage
+                  className={"error"}
+                  name='url'
+                  component='div'/>
               </div>
+
               <div className={'product-tier'}>
                 <p>Select Product Tier</p>
                 <div role="group" aria-labelledby="my-radio-group" className='radio-inputs'>
@@ -97,6 +110,7 @@ export function ProductDetail() {
                               name='price_tier'
                               component='div'/>
               </div>
+
               <div>
                 <p>Product Range</p>
                 <Field className='inputs' name='price_range' as='select'
@@ -119,6 +133,7 @@ export function ProductDetail() {
                 <ErrorMessage className={"error"} name='price_range'
                               component='div'/>
               </div>
+
               <div className={'checkboxContainer'}>
                 <p className='checkboxLabel'>Mark as editable ?</p>
                 <Field name='isEditable' type='checkbox' className={'edit-check'}/>
@@ -130,7 +145,7 @@ export function ProductDetail() {
               <button
                 className='.submit-button'
                 type='submit'
-                style={{cursor:props.isValid?'pointer':'not-allowed'}}
+                style={{cursor: props.isValid ? 'pointer' : 'not-allowed'}}
               >
                 Edit Product
               </button>

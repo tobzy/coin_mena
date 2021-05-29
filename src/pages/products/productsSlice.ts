@@ -23,10 +23,7 @@ const initialState: ProductState = {
   status: 'idle',
 };
 
-// The function below is called a thunk and allows us to perform async logic. It
-// can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
-// will call the thunk with the `dispatch` function as the first argument. Async
-// code can then be executed and other actions can be dispatched. Thunks are
+// The function below is called a thunk and allows us to perform async logic. Thunks are
 // typically used to make async requests.
 export const fetchProductsAsync = createAsyncThunk(
   'products/fetch',
@@ -44,8 +41,6 @@ export const productsSlice = createSlice({
   reducers: {
     // Use the PayloadAction type to declare the contents of `action.payload`
     editProduct: (state, action: PayloadAction<ProductInterface>) => {
-      // state.products  = action.payload;
-      // state.data  = [];
       const updatedProduct = {...action.payload};
       const olderProducts = [...state.data].map(product => {
         if(product._id === updatedProduct._id){
@@ -75,7 +70,7 @@ export const { editProduct } = productsSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
-// in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
+// in the slice file. For example: `useSelector((state: RootState) => state.products)`
 export const selectProducts = (state: RootState) => state.products;
 
 export default productsSlice.reducer;
