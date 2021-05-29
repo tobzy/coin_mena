@@ -4,7 +4,7 @@ A react web app, which reads product data from a json file (attached separately)
 
 
 #### Demo
-A demo for this application can be found [here](https://festive-hermann-3dd25b.netlify.app/).
+A demo for this application can be found [here](https://tender-yalow-684470.netlify.app/).
 
 #### Tools:
 This project was generated with [Create React App](https://reactjs.org/docs/create-a-new-react-app.html)
@@ -28,5 +28,4 @@ This project was generated with [Create React App](https://reactjs.org/docs/crea
 
 - Run `yarn build` to build the app for production to the `build` folder.\ It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.\
   Your app is ready to be deployed!
-
-- Run `yarn test` to run tests. Launches the test runner in the interactive watch mode.
+  

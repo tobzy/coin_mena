@@ -13,12 +13,12 @@ export interface ProductInterface  {
   "unit_cost": string,
   "isEditable": boolean
 }
-export interface CounterState {
+export interface ProductState {
   data: ProductInterface[];
   status: 'idle' | 'loading' | 'failed';
 }
 
-const initialState: CounterState = {
+const initialState: ProductState = {
   data: [],
   status: 'idle',
 };
