@@ -38,7 +38,7 @@ export const fetchProductsAsync = createAsyncThunk(
 );
 
 export const productsSlice = createSlice({
-  name: 'counter',
+  name: 'products',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
