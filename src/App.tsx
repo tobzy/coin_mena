@@ -11,9 +11,10 @@ import {useAppDispatch} from "./app/hooks";
 
 function App() {
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(fetchProductsAsync())
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="App">
